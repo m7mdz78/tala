@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ليش بحبك؟ ✨🎈</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&display=swap');
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Cairo', 'Segoe UI', Tahoma, sans-serif;
+    }
+    
+    /* Dreamy Twilight Starry Sky Theme */
+    body {
+      background: radial-gradient(circle at top right, #2b1055 0%, #1b0b3b 45%, #0d0620 100%);
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 20px;
+      overflow-x: hidden;
+      overflow-y: auto;
+      position: relative;
+      color: #fff;
+    }
+
+    /* Twinkling Ambient Stars */
+    .star {
+      position: fixed;
+      background: #fff;
+      border-radius: 50%;
+      pointer-events: none;
+      animation: twinkle infinite alternate;
+      z-index: 1;
+    }
+
+    @keyframes twinkle {
+      0% { opacity: 0.2; transform: scale(0.8); }
+      100% { opacity: 1; transform: scale(1.2); }
+    }
+
+    /* Floating Emojis Animation */
+    .float-item {
+      position: fixed;
+      bottom: -10vh;
+      font-size: 1.65rem;
+      animation: floatUp linear forwards;
+      z-index: 2;
+      pointer-events: none;
+      opacity: 0.88;
+    }
+
+    @keyframes floatUp {
+      to {
+        transform: translateY(-115vh) rotate(360deg);
+        opacity: 0;
+      }
+    }
+
+    /* Red Balloon Styling & Animation */
+    .red-balloon {
+      position: fixed;
+      bottom: -150px;
+      width: 55px;
+      height: 68px;
+      background: radial-gradient(circle at 30% 30%, #ff6b6b, #e60023 65%, #990017 100%);
+      border-radius: 50% 50% 50% 50% / 45% 45% 55% 55%;
+      box-shadow: inset -6px -8px 15px rgba(0, 0, 0, 0.3), 0 8px 20px rgba(230, 0, 35, 0.4);
+      z-index: 20;
+      cursor: pointer;
+      animation: floatBalloon linear forwards;
+      transition: transform 0.15s ease;
+    }
+
+    /* Balloon Knot */
+    .red-balloon::before {
+      content: "";
+      position: absolute;
+      bottom: -6px;
+      left: 50%;
+      transform: translateX(-50%);
+      border-left: 6px solid transparent;
+      border-right: 6px solid transparent;
+      border-bottom: 8px solid #b3001b;
+    }
+
+    /* Balloon String */
+    .red-balloon::after {
+      content: "";
+      position: absolute;
+      bottom: -55px;
+      left: 50%;
+      width: 1.5px;
+      height: 50px;
+      background: rgba(255, 255, 255, 0.5);
+      transform: translateX(-50%);
+    }
+
+    /* Balloon Shine */
+    .balloon-shine {
+      position: absolute;
+      top: 12px;
+      left: 12px;
+      width: 12px;
+      height: 22px;
+      background: rgba(255, 255, 255, 0.45);
+      border-radius: 50%;
+      transform: rotate(25deg);
+    }
+
+    @keyframes floatBalloon {
+      0% {
+        transform: translateY(0) rotate(-4deg);
+      }
+      50% {
+        transform: translateY(-60vh) rotate(5deg);
+      }
+      100% {
+        transform: translateY(-130vh) rotate(-4deg);
+      }
+    }
+
+    /* Dark Frosted Glass Card */
+    .card {
+      background: rgba(28, 15, 58, 0.8);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      padding: 36px 26px;
+      border-radius: 28px;
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5), 0 0 25px rgba(247, 183, 51, 0.15);
+      border: 1.5px solid rgba(255, 215, 130, 0.25);
+      max-width: 450px;
+      width: 100%;
+      position: relative;
+      z-index: 10;
+      margin: auto;
+    }
+
+    .hidden { display: none !important; }
+    
+    h1, h2 {
+      color: #ffd166;
+      margin-bottom: 14px;
+      font-weight: 800;
+      text-shadow: 0 2px 10px rgba(255, 209, 102, 0.3);
+    }
+
+    p {
+      color: #e2d9f3;
+      margin-bottom: 20px;
+      font-size: 1.05rem;
+      line-height: 1.75;
+    }
+
+    #finalLoveNote {
+      white-space: pre-line;
+      font-size: 1.02rem;
+      line-height: 1.8;
+      background: rgba(255, 255, 255, 0.05);
+      padding: 16px 18px;
+      border-radius: 18px;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    button {
+      background: linear-gradient(135deg, #f7b733 0%, #fc4a1a 100%);
+      color: #fff;
+      border: none;
+      padding: 13px 32px;
+      font-size: 1.05rem;
+      font-weight: 700;
+      border-radius: 30px;
+      cursor: pointer;
+      transition: transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.2s;
+      margin-top: 10px;
+      box-shadow: 0 6px 20px rgba(252, 74, 26, 0.4);
+    }
+
+    button:hover {
+      transform: scale(1.06);
+      box-shadow: 0 10px 25px rgba(252, 74, 26, 0.6);
+    }
+    button:active { transform: scale(0.96); }
+
+    .btn-hint {
+      font-size: 0.82rem;
+      color: #cbbbe8;
+      margin-top: 8px;
+      margin-bottom: 0;
+      opacity: 0.9;
+    }
+
+    /* Interactive Love Meter */
+    .slider-box { margin: 25px 0; }
+    input[type="range"] {
+      width: 100%;
+      accent-color: #ffd166;
+      cursor: pointer;
+      height: 8px;
+      border-radius: 5px;
+      background: rgba(255,255,255,0.2);
+    }
+    .meter-label {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: #ffd166;
+      margin-top: 15px;
+      min-height: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    /* Reason Card Box */
+    .reason-box {
+      background: rgba(255, 255, 255, 0.08);
+      border: 1.5px dashed rgba(255, 209, 102, 0.5);
+      border-radius: 18px;
+      padding: 25px 20px;
+      margin: 15px 0;
+      min-height: 125px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.15rem;
+      color: #fff;
+      font-weight: 600;
+      transition: transform 0.3s ease;
+    }
+
+    /* Funny Checklist (RTL aligned) */
+    .checklist {
+      text-align: right;
+      background: rgba(0, 0, 0, 0.25);
+      padding: 16px 20px;
+      border-radius: 18px;
+      margin-bottom: 20px;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    .checklist label {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin: 12px 0;
+      color: #f3e8ff;
+      font-size: 0.98rem;
+      cursor: pointer;
+    }
+    .checklist input[type="checkbox"] {
+      width: 19px;
+      height: 19px;
+      accent-color: #ffd166;
+      flex-shrink: 0;
+    }
+
+    /* Audio Player Styling */
+    .song-box {
+      background: rgba(255, 255, 255, 0.08);
+      padding: 15px;
+      border-radius: 18px;
+      margin: 15px 0;
+      border: 1px solid rgba(255, 209, 102, 0.25);
+    }
+    audio {
+      width: 100%;
+      margin-top: 8px;
+      border-radius: 30px;
+      height: 42px;
+    }
+
+    /* Screen Transitions */
+    .pop-in { animation: popIn 0.55s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards; }
+    @keyframes popIn {
+      0% { opacity: 0; transform: scale(0.85) translateY(20px); }
+      100% { opacity: 1; transform: scale(1) translateY(0); }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Screen 1: Cute Intro -->
+  <div class="card pop-in" id="screen1">
+    <h1>خبر عاجل! 🚨✨</h1>
+    <p>لقد اكتشف العلماء انك احلى و ألطف بنت بالدنيا كلها … اضغطي تحت عشان تشوفي الدليل</p>
+    <button onclick="nextScreen(2)">ورّيني الدليل 🔍</button>
+  </div>
+
+  <!-- Screen 2: Funny Love Meter -->
+  <div class="card hidden" id="screen2">
+    <h2>مقياس حبي إلك 🌙</h2>
+    <p>اسحبي الخط للأخير عشان تحسبي قديش بحبك:</p>
+    <div class="slider-box">
+      <input type="range" id="loveSlider" min="1" max="100" value="20" oninput="updateMeter(this.value)">
+      <div class="meter-label" id="meterText">20% — اممممم لا ما بكفي كملي</div>
+    </div>
+    <button id="meterNextBtn" class="hidden" onclick="nextScreen(3)">كمّلي ✨</button>
+  </div>
+
+  <!-- Screen 3: Interactive Reason Generator -->
+  <div class="card hidden" id="screen3">
+    <h2>أسباب بتخليني أموت فيكي 💫</h2>
+    <div class="reason-box" id="reasonDisplay">
+      اضغطي على الزر اللي تحت عشان تشوفي أول سبب!
+    </div>
+    <button id="reasonBtn" onclick="showNextReason()">شوفي السبب 💡</button>
+    <br>
+    <button id="toContractBtn" class="hidden" onclick="nextScreen(4)" style="background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);">ع اللي بعده ⬅️</button>
+  </div>
+
+  <!-- Screen 4: Funny Terms & Conditions -->
+  <div class="card hidden" id="screen4">
+    <h2>شروط رسمية جداً 📜</h2>
+    <p style="font-size: 0.95rem; margin-bottom: 10px;">لازم توافقي على هاي الشروط عشان تقدري تكمّلي:</p>
+    <div class="checklist">
+      <label><input type="checkbox" class="term-check" onchange="checkTerms()"> علقة asap (طلبي عشان ما صحيتي 😝)</label>
+      <label><input type="checkbox" class="term-check" onchange="checkTerms()"> لا توقفي ب انك لا تحكيلي لما يكون في شي بضايقك مني</label>
+      <label><input type="checkbox" class="term-check" onchange="checkTerms()"> ما يمرق يومين بدون ما تعطيني بوستي</label>
+    </div>
+    <button id="agreeBtn" disabled style="opacity: 0.45; cursor: not-allowed;" onclick="nextScreen(5)">موافقة 100% ❤️</button>
+  </div>
+
+  <!-- Screen 5: Final Message + Dedicated Song + Red Balloons -->
+  <div class="card hidden" id="screen5">
+    <h2>يا أحلى إشي بحياتي 🥰🎈</h2>
+    <p id="finalLoveNote">امممم والله يا تالا انك احلى شي صار بحياتي رغم كل الي بصير بينا بس idc بما انك جنبي هاد الي بهمني بدي احكيلك اني بحبك كتير كتير عشان بتضلي تستحمليني قرفي و غبائي بس عاد طورتي شو تعملي هيهي
+بموت فيكي و لا تفكري انو ممكن يجي يوم حبي الك يخف او مكانتك عندي تتغير 
+جد مو عارف كيف رح يمرقو هالتلات سنين بس يارب يمرقو طيارة و ما نحس فيهم و نصير مع بعض رسمي و كلشي رسمي 
+موحححح</p>
+    
+    <div class="song-box">
+      <p style="margin-bottom: 5px; font-size: 0.98rem; color: #ffd166;"><strong>٦٠ دقيقة حياة 🎵:</strong></p>
+      <audio controls>
+        <source src="دقيقة حياة.mp3" type="audio/mpeg">
+      </audio>
+    </div>
+
+    <button onclick="releaseBalloons(12)">طَيّري بالونات حمرا 🎈❤️</button>
+    <p class="btn-hint">ضلك عم تكبسي ورا بعض عشان يطلع اكتر</p>
+  </div>
+
+  <script>
+    // Generate starry night sky background
+    function createStars() {
+      for (let i = 0; i < 65; i++) {
+        const star = document.createElement('div');
+        star.classList.add('star');
+        const size = Math.random() * 3 + 1 + 'px';
+        star.style.width = size;
+        star.style.height = size;
+        star.style.top = Math.random() * 100 + 'vh';
+        star.style.left = Math.random() * 100 + 'vw';
+        star.style.animationDuration = (Math.random() * 2 + 1.5) + 's';
+        document.body.appendChild(star);
+      }
+    }
+    createStars();
+
+    // Smooth Screen Switcher
+    function nextScreen(num) {
+      document.querySelectorAll('.card').forEach(c => c.classList.add('hidden'));
+      const target = document.getElementById(`screen${num}`);
+      target.classList.remove('hidden');
+      target.classList.remove('pop-in');
+      void target.offsetWidth;
+      target.classList.add('pop-in');
+
+      // Release a gentle wave of red balloons on the final page
+      if (num === 5) {
+        releaseBalloons(10);
+      }
+    }
+
+    // Love Meter Logic
+    let meterPopped = false;
+    function updateMeter(val) {
+      const text = document.getElementById('meterText');
+      const nextBtn = document.getElementById('meterNextBtn');
+
+      if (val < 30) {
+        text.innerText = `${val}% — اممممم لا ما بكفي كملي`;
+      } else if (val < 60) {
+        text.innerText = `${val}% — قربنا بس لسا كملي`;
+      } else if (val < 90) {
+        text.innerText = `${val}% — كملي ما ضل شي ❤️`;
+      } else if (val < 100) {
+        text.innerText = `${val}% — هسا رح ينفجر العداد! 🚀`;
+      } else {
+        text.innerText = `إيرور 404: الحب طلع فوق الـ 1,000,000% ❤️🔥`;
+        nextBtn.classList.remove('hidden');
+        if (!meterPopped) {
+          meterPopped = true;
+          releaseBalloons(8);
+        }
+      }
+    }
+
+    // Customizable Reasons List
+    const reasons = [
+      "1. ضحكتك عندي بتسوى الدنيا كلها",
+      "2. خوفك علي و اهتمامك فيني بقلبي",
+      "3. ازا كنا بكول و ما عم نحكي بحس راحة بحس اني جنبك",
+      "4. ٦٠ دقيقة حياة"
+    ];
+    let reasonIndex = 0;
+
+    function showNextReason() {
+      const box = document.getElementById('reasonDisplay');
+      const btn = document.getElementById('reasonBtn');
+      const nextBtn = document.getElementById('toContractBtn');
+
+      box.style.transform = "scale(0.95)";
+      setTimeout(() => {
+        box.innerText = reasons[reasonIndex];
+        box.style.transform = "scale(1)";
+        reasonIndex++;
+
+        if (reasonIndex >= reasons.length) {
+          btn.classList.add('hidden');
+          nextBtn.classList.remove('hidden');
+        } else {
+          btn.innerText = `السبب اللي بعده (${reasonIndex}/${reasons.length}) 💡`;
+        }
+      }, 150);
+    }
+
+    // Checklist Validator
+    function checkTerms() {
+      const checks = document.querySelectorAll('.term-check');
+      const allChecked = Array.from(checks).every(c => c.checked);
+      const btn = document.getElementById('agreeBtn');
+
+      if (allChecked) {
+        btn.disabled = false;
+        btn.style.opacity = "1";
+        btn.style.cursor = "pointer";
+      } else {
+        btn.disabled = true;
+        btn.style.opacity = "0.45";
+        btn.style.cursor = "not-allowed";
+      }
+    }
+
+    // Floating Lilies, Tulips & Red Hearts
+    function createFloatingEmoji() {
+      const item = document.createElement('div');
+      item.classList.add('float-item');
+      const emojis = ['🌷', '🪷', '❤️', '🌷', '❤️'];
+      item.innerText = emojis[Math.floor(Math.random() * emojis.length)];
+      item.style.left = Math.random() * 100 + 'vw';
+      item.style.animationDuration = (Math.random() * 3 + 4) + 's';
+      document.body.appendChild(item);
+
+      setTimeout(() => {
+        item.remove();
+      }, 7000);
+    }
+    setInterval(createFloatingEmoji, 900);
+
+    // Interactive Red Balloons Generator
+    function spawnSingleBalloon() {
+      const balloon = document.createElement('div');
+      balloon.classList.add('red-balloon');
+      
+      const shine = document.createElement('div');
+      shine.classList.add('balloon-shine');
+      balloon.appendChild(shine);
+
+      balloon.style.left = (Math.random() * 88 + 4) + 'vw';
+      const scale = Math.random() * 0.35 + 0.85;
+      balloon.style.transform = `scale(${scale})`;
+      const duration = Math.random() * 3 + 5;
+      balloon.style.animationDuration = duration + 's';
+
+      balloon.onclick = function() {
+        const popHeart = document.createElement('div');
+        popHeart.innerText = '❤️';
+        popHeart.style.position = 'fixed';
+        popHeart.style.left = balloon.getBoundingClientRect().left + 'px';
+        popHeart.style.top = balloon.getBoundingClientRect().top + 'px';
+        popHeart.style.fontSize = '2rem';
+        popHeart.style.zIndex = '25';
+        popHeart.style.pointerEvents = 'none';
+        popHeart.style.transition = 'all 0.6s ease-out';
+        document.body.appendChild(popHeart);
+        
+        requestAnimationFrame(() => {
+          popHeart.style.transform = 'scale(1.8) translateY(-30px)';
+          popHeart.style.opacity = '0';
+        });
+
+        setTimeout(() => popHeart.remove(), 600);
+        balloon.remove();
+      };
+
+      document.body.appendChild(balloon);
+      setTimeout(() => {
+        if (balloon.parentNode) balloon.remove();
+      }, duration * 1000);
+    }
+
+    function releaseBalloons(count) {
+      for (let i = 0; i < count; i++) {
+        setTimeout(spawnSingleBalloon, i * 250);
+      }
+    }
+  </script>
+</body>
+</html>
